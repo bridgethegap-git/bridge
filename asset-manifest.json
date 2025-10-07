@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bridge/static/css/main.f954e0d3.css",
+    "main.js": "/bridge/static/js/main.a5b02c8b.js",
+    "index.html": "/bridge/index.html",
+    "main.f954e0d3.css.map": "/bridge/static/css/main.f954e0d3.css.map",
+    "main.a5b02c8b.js.map": "/bridge/static/js/main.a5b02c8b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f954e0d3.css",
+    "static/js/main.a5b02c8b.js"
+  ]
+}
