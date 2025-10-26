@@ -1,0 +1,409 @@
+/* === PROGRAMS CONTAINER === */
+.programs-container {
+  min-height: 100vh;
+  background-color: #e9e9e9;
+  padding-bottom: 80px;
+}
+/* === PROGRAMS HERO === */
+.programs-hero {
+  padding: 200px 20px 160px;
+  text-align: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  position: relative;
+  overflow: hidden;
+}
+.programs-loading p{
+    font-family: 'montserrat', sans-serif;
+}
+
+.programs-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(158, 198, 243, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(254, 235, 246, 0.12) 0%, transparent 40%);
+  pointer-events: none;
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.programs-hero h1 {
+  font-family: 'Boowie', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FEEBF6 0%, #e2e8f0 50%, #D4F6FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    filter: drop-shadow(0 2px 20px rgba(158, 198, 243, 0.4));
+    text-shadow: 0 0 80px rgba(158, 198, 243, 0.3);
+}
+
+.programs-hero p {
+      font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    font-family: 'montserrat', sans-serif;
+}
+
+/* === PROGRAMS GRID === */
+.programs-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+/* === PROGRAM CARD === */
+.program-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.041),
+    0 0 40px rgba(240, 241, 241, 0.252),
+    0 10px 20px rgba(245, 245, 245, 0.054);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.program-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FEEBF6 0%, #9EC6F3 50%, #D4F6FF 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 0 40px rgba(255, 255, 255, 0.054),
+    0 0 60px rgba(255, 255, 255, 0.668),
+    0 0 100px rgba(255, 255, 255, 0.045),
+    0 10px 40px rgba(255, 255, 255, 0.057);
+}
+
+.program-card:hover::before {
+  opacity: 1;
+}
+/* === CAROUSEL === */
+.program-carousel {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+}
+
+.carousel-images {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover .carousel-image {
+  transform: scale(1.05);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+  background: linear-gradient(135deg, #FEEBF6 0%, #9EC6F3 50%, #D4F6FF 100%);
+  color: #1a1a1a;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(158, 198, 243, 0.4);
+}
+
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px;
+}
+
+/* === CAROUSEL DOTS === */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.dot.active {
+  background: linear-gradient(135deg, #FEEBF6 0%, #9EC6F3 50%, #D4F6FF 100%);
+  border-color: #ffffff;
+  transform: scale(1.3);
+}
+
+/* === PROGRAM CONTENT === */
+.program-content {
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.program-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(158, 198, 243, 0.05) 0%, 
+    rgba(254, 235, 246, 0.03) 50%, 
+    rgba(212, 246, 255, 0.05) 100%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.program-title {
+      font-family: 'Boowie', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #494849 0%, #5e9ade 50%, #2b98b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    filter: drop-shadow(0 2px 20px rgba(158, 198, 243, 0.4));
+}
+
+.program-description {
+  font-size: 1.05rem;
+  color: #1a1a1a;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  position: relative;
+  z-index: 1;
+  font-family: 'montserrat', sans-serif;
+}
+
+/* === NO IMAGE STATE === */
+.no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%);
+}
+
+.no-image p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* === LOADING STATE === */
+.programs-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20px;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(158, 198, 243, 0.2);
+  border-top-color: #9EC6F3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.programs-loading p {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* === ERROR STATE === */
+.programs-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20px;
+  padding: 20px;
+}
+
+.programs-error p {
+  font-size: 1.2rem;
+  color: #d32f2f;
+  text-align: center;
+}
+
+.retry-btn {
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #FEEBF6 0%, #9EC6F3 50%, #D4F6FF 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(158, 198, 243, 0.3);
+}
+
+.retry-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(158, 198, 243, 0.4);
+}
+
+/* === NO PROGRAMS STATE === */
+.no-programs {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.no-programs p {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .programs-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .programs-hero p {
+    font-size: 1rem;
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .program-carousel {
+    height: 400px;
+  }
+
+  .program-title {
+    font-size: 1.6rem;
+  }
+
+  .program-description {
+    font-size: 0.95rem;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+
+  .next-btn {
+    right: 10px;
+  }
+
+  .program-content {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .programs-hero {
+    padding: 120px 15px 60px;
+  }
+
+  .programs-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .program-content {
+    padding: 20px;
+  }
+
+  .program-carousel {
+    height: 320px;
+  }
+}

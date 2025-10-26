@@ -1,0 +1,545 @@
+/* === ABOUT PAGE === */
+.about-page-body {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f5f5f5 30%,
+    #e8e8e8 70%,
+    #d0d0d0 100%
+  );
+  padding: 0px 20px 80px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+}
+
+/* Floating ambient orbs */
+.about-page-body::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -15%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(158, 198, 243, 0.15) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: float 25s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.about-page-body::after {
+  content: '';
+  position: absolute;
+  bottom: -25%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(254, 235, 246, 0.18) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(70px);
+  animation: float 20s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -40px) scale(1.1);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+/*founders */
+
+.about-page-founders{
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
+.about-page-founders h2{
+    font-family: 'boowie', sans-serif;
+    font-size: 2.5rem;
+    padding-top: 80px;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+
+}
+
+
+/* partners */
+.about-page-partners{
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 90px;
+}
+
+.about-page-partners h2{
+    font-family: 'boowie', sans-serif;
+    font-size: 2.5rem;
+    padding-top: 80px;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+
+}
+
+
+/* stats */
+.about-card--stats{
+    text-align: center;
+}
+
+.about-card--stats h2{
+    font-family: 'boowie', sans-serif;
+    font-size: 2.5rem;
+    padding-top: 40px;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+
+}
+
+
+/* about page intro */
+
+.about-page-intro{
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-top: 100px;
+  padding-bottom: 150px;
+   background: #1a1a1a;
+}
+
+.about-page-intro .about-card-content {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 300;
+  /* your styles here */
+}
+
+.about-page-intro .about-card{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    text-align: center;
+
+}
+
+/* About intro item wrapper */
+.about-intro-item {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Title outside the card */
+.about-intro-title {
+  font-family: 'Boowie', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #dcd2d8 0%, #eef1f4 50%, #D4F6FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+  filter: drop-shadow(0 2px 15px rgba(158, 198, 243, 0.3));
+  margin-bottom: 30px;
+}
+
+/* Update the existing intro card styles */
+.about-page-intro .about-card {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+
+
+
+/* === HERO SECTION === */
+.about-hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  z-index: 1;
+  margin-top: 0;
+  padding-top: 250px;
+  padding-bottom: 150px;
+}
+
+.about-title {
+  font-family: 'Boowie', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FEEBF6 0%, #e2e8f0 50%, #D4F6FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  filter: drop-shadow(0 2px 20px rgba(158, 198, 243, 0.4));
+  text-shadow: 0 0 80px rgba(158, 198, 243, 0.3);
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+}
+
+
+/* === CARD BODY === */
+.about-card-body {
+  position: relative;
+  z-index: 2;
+}
+
+.about-card-content {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #3a3a3a;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+/* === VALUES GRID === */
+.about-card--values {
+  padding: 50px;
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.value-item {
+  padding: 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(254, 235, 246, 0.2) 50%,
+    rgba(158, 198, 243, 0.2) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 24px rgba(158, 198, 243, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 40px rgba(158, 198, 243, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.value-header {
+  margin-bottom: 15px;
+}
+
+.value-title {
+  font-family: 'boowie', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #353334 0%, #181e25 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+}
+
+.value-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+.about-card--values h2{
+    font-family: 'boowie', sans-serif;
+    font-size: 2.1rem;
+    padding-top: 80px;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+
+}
+
+
+
+
+
+
+
+/* === STATS GRID === */
+.about-card--stats {
+  padding: 50px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 35px 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(254, 235, 246, 0.25) 30%,
+    rgba(158, 198, 243, 0.25) 60%,
+    rgba(212, 246, 255, 0.25) 100%
+  );
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  box-shadow: 
+    0 10px 32px rgba(158, 198, 243, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Gradient border for stat items */
+.stat-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(254, 235, 246, 0.4),
+    rgba(158, 198, 243, 0.4),
+    rgba(212, 246, 255, 0.4)
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 50px rgba(158, 198, 243, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.stat-value {
+  display: block;
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #4f4b66 0%, #32547a 50%, #267b93 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  filter: drop-shadow(0 0 20px rgba(158, 198, 243, 0.5));
+  animation: glow 3s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 20px rgba(158, 198, 243, 0.5));
+  }
+  50% { 
+    filter: drop-shadow(0 0 35px rgba(158, 198, 243, 0.8));
+  }
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.95rem;
+  color: #3a3a3a;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  line-height: 1.4;
+}
+
+
+/* === PARTNERS GRID === */
+.about-partners-intro {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.partner-item {
+  padding: 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(254, 235, 246, 0.2) 50%,
+    rgba(158, 198, 243, 0.2) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 24px rgba(158, 198, 243, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.partner-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 40px rgba(158, 198, 243, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.partner-name {
+  font-family: 'Boowie', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #30359f 0%, #9EC6F3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.partner-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: 3.5rem;
+  }
+  
+  .about-card {
+    padding: 35px 40px;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page-body {
+    padding: 0px 15px 60px;
+  }
+  
+  .about-title {
+    font-size: 2.8rem;
+  }
+  
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .about-card {
+    padding: 30px 25px;
+  }
+  
+  .about-card-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-card-content {
+    font-size: 1rem;
+  }
+  
+  .value-item {
+    padding: 25px;
+  }
+  
+  .stat-item {
+    padding: 30px 25px;
+  }
+  
+  .stat-value {
+    font-size: 2.5rem;
+  }
+}

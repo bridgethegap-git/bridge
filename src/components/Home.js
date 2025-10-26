@@ -1,15 +1,15 @@
 import React from 'react'
 import '../styles/Home.css'
 
-const background = `${process.env.PUBLIC_URL}/ngoback7.jpg` // 👈 your image in public folder
+const background = `${process.env.PUBLIC_URL}/ngoback7.jpg`
 const background2 = `${process.env.PUBLIC_URL}/nboback2.png`
 
-// Home page content
+const link = 'https://www.zeffy.com/en-US/donation-form/aa13ac2d-07c5-42fd-8f8c-aba90133e72f'
+
 const HomeContent = {
   hero: {
     title: "Building Bridges, Transforming Lives",
-    subtitle:
-      "Empowering communities through education, technology, and sustainable development initiatives that create lasting positive change around the world.",
+    subtitle: "Empowering communities through education, technology, and sustainable development initiatives that create lasting positive change around the World.",
     stats: [
       { label: "Lives Impacted", value: "8K+" },
       { label: "Countries", value: "2" },
@@ -30,7 +30,7 @@ const HomeContent = {
     programs: [
       {
         title: "Education",
-        text: "Our 'Equipping for a Brighter Tomorrow' project supports students in less privileged communities by providing essential book bags and school supplies.",
+        text: "Our 'Equipping for a Brighter Future' project supports students in less privileged communities by providing essential book bags and school supplies.",
       },
       {
         title: "Women Empowerment",
@@ -38,17 +38,14 @@ const HomeContent = {
       },
       {
         title: "Partnerships",
-        text: "We collaborate with Samaritan Ministries, Enhearten Unseen Leaders, and the Fafali Organization to expand our global impact.",
+        text: "We collaborate with Samaritan Ministries, Enhearten Unseen Leaders, Wegmans, and the Fafali Organization to expand our global impact.",
       },
     ],
   },
-  impact: {
-    heading: "Our Global Impact",
-    stats: [
-      { label: "Lives Impacted", value: "8,000+" },
-      { label: "Countries", value: "2" },
-      { label: "High Success Rate", value: "Programs achieve intended outcomes" },
-    ],
+  donation: {
+    heading: "Help Us Make a Difference",
+    text: "Your kind donation to communities can create a profound and enduring impact by funding essential resources and programs that address critical needs and the people we serve.",
+    buttonText: "Donate Now!",
   },
   shopCTA: {
     heading: "Shop & Support: Custom Shirts Tailored Just for You!",
@@ -58,21 +55,21 @@ const HomeContent = {
   contact: {
     email: "info@bridgeinthegap.org",
     phone: "(980) 550-0454",
-    address: "Winston-Salem, NC, USA",
-    website: "bridgegapworldwide.org",
+    address: "3820 Bethania Lot Dr, Winston Salem, NC",
+    website: "bridgeinthegapworldwide.org",
     social: {
-      facebook: "https://www.facebook.com/share/1G7JSjzoqL/",
+      facebook: "https://www.facebook.com/bridgeinthegapworldwide",
       instagram: "https://www.instagram.com/bridgeinthegap23?igsh=ZHp6ZmdxdTlseHdj",
       linkedin: "https://www.linkedin.com/company/bridge-in-the-gap-worldwide/",
-      youtube: "https://www.youtube.com/channel/UC1234567890",
+      youtube: "https://www.youtube.com/@bridgeinthegapworldwide",
     },
     donors: ["Enhearten Unseen Leaders", "Wegmans", "Panda Express"],
   },
 }
 
 function Home() {
-  const { hero, about, gapBridger, programsPreview, impact, shopCTA, contact } = HomeContent
-
+  const { hero, about, gapBridger, programsPreview, donation, shopCTA, contact } = HomeContent
+  
   return (
     <div className='home-body'>
       {/* Hero Section */}
@@ -90,13 +87,14 @@ function Home() {
         <div className='stats'>
           {hero.stats.map((s, i) => (
             <div key={i} className="stat">
-              <strong>{s.value}</strong> 
-              {/* FIX APPLIED HERE: Wrap the label text in a span */}
+              <strong>{s.value}</strong>
               <span className="stat-label">{s.label}</span>
             </div>
           ))}
         </div>
-        <button>{hero.donateCTA}</button>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+  <button>{hero.donateCTA}</button>
+</a>
       </section>
 
       {/* About Section */}
@@ -110,45 +108,36 @@ function Home() {
         <h2>{gapBridger.heading}</h2>
         <p>{gapBridger.text}</p>
       </section>
-{/* Programs Preview */}
-<section
-  className='programs-preview stats2'
-  style={{
-    // Assuming 'background2' variable contains the URL or path to the image
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url(${background2})`, 
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-  }}
->
-  
-  {/* The H2 title is the first item in the column */}
-  <h2>{programsPreview.heading}</h2>
 
-  {/* The Wrapper for Cards: This is the second item in the column, and it manages the row layout */}
-  <div className="programs-cards-row">
-    {programsPreview.programs.map((p, i) => (
-      <div key={i} className='preview-main'> 
-        <h3>{p.title}</h3>
-        <p>{p.text}</p>
-      </div>
-    ))}
-  </div>
-  
-</section>
+      {/* Programs Preview */}
+      <section
+        className='programs-preview stats2'
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url(${background2})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      >
+        <h2>{programsPreview.heading}</h2>
+        <div className="programs-cards-row">
+          {programsPreview.programs.map((p, i) => (
+            <div key={i} className='preview-main'>
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* Global Impact */}
-    <section className='impact'>
-  <h2>{impact.heading}</h2>
-  <div>
-    {impact.stats.map((s, i) => (
-      <div key={i}>
-        <strong>{s.value}</strong>
-        <span className="impact-label">{s.label}</span>
-      </div>
-    ))}
-  </div>
-</section>
+      {/* Donation CTA */}
+      <section className='donation-cta'>
+        <h2>{donation.heading}</h2>
+        <p className='strong'>{donation.text}</p>
+       <a href={link} target="_blank" rel="noopener noreferrer">
+  <button>{donation.buttonText}</button>
+</a>
+      </section>
 
       {/* Shop CTA */}
       <section className='shop-cta'>
@@ -174,11 +163,11 @@ function Home() {
           <a href={contact.social.linkedin} style={{ textDecoration: 'none' }}>
             LinkedIn
           </a>
-            <a href={contact.social.youtube} style={{ textDecoration: 'none' }}>
+          <a href={contact.social.youtube} style={{ textDecoration: 'none' }}>
             Youtube
           </a>
         </div>
-        <p>Donors: {contact.donors.join(' • ')}</p>
+        <p>Corporate Partners: {contact.donors.join(' • ')}</p>
       </section>
     </div>
   )
